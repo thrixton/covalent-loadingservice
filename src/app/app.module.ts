@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { LoadFormComponent } from './load-form/load-form.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadFormComponent
   ],
   imports: [
     BrowserModule,
