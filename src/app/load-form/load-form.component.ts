@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-load-form',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadFormComponent implements OnInit {
 
-  constructor() { }
+  overlayStarSyntax: boolean = false;
 
-  ngOnInit() {
+  overlayDemo: any = {
+    name: '',
+    description: '',
+  };
+
+  constructor(private _loadingService: TdLoadingService) {}
+
+  ngOnInit(): void {
+    this._loadingService.register('overlayStarSyntax');
   }
+
+  toggleOverlayStarSyntax(): void {
+    if (this.overlayStarSyntax) {
+      this._loadingService.register('overlayStarSyntax');
+    } else {
+      this._loadingService.resolve('overlayStarSyntax');
+    }
+    this.overlayStarSyntax = !this.overlayStarSyntax;
+  }
+
 
 }
