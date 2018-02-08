@@ -8,11 +8,8 @@ import {
   MatInputModule,
   MatButtonModule,
 } from '@angular/material';
-import {
-  CovalentLoadingModule,
-} from '@covalent/core';
+import { CovalentLoadingModule } from '@covalent/core/loading';
 
-import { TdLoadingService, TdLoadingFactory } from '@covalent/core/loading';
 
 import { AppComponent } from './app.component';
 import { LoadFormComponent } from './load-form/load-form.component';
@@ -34,7 +31,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MatButtonModule,
     CovalentLoadingModule
   ],
-  providers: [TdLoadingService, TdLoadingFactory],
 
   bootstrap: [AppComponent]
 })
